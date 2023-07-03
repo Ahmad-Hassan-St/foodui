@@ -15,23 +15,44 @@ class home extends StatefulWidget {
 class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
+    floatingActionButton: FloatingActionButton(onPressed: () {  },
+      child: Icon(Icons.add),
+
+    ),
+      appBar: AppBar(
+        actions:  [
+          const Icon(Icons.add_alert),
+          SizedBox(width: screenWidth * 0.03),
+          const Padding(
+            padding: EdgeInsets.only(right: 20),
+            child: Icon(Icons.shopping_cart),
+          ),
+        ],
+        backgroundColor: primaryColor,
+
+        title: const Center(
+          child: Text(
+            "Fast n Food ",
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CarouselSlider(
               items: [
-                SliderImage(imagepath: slider_imagepath[0]),
-                SliderImage(imagepath: slider_imagepath[1]),
-                SliderImage(imagepath: slider_imagepath[2]),
-                SliderImage(imagepath: slider_imagepath[3]),
-                SliderImage(imagepath: slider_imagepath[4]),
+                for (int i = 0; i < slider_imagepath.length; i++)
+                  SliderImage(imagepath: slider_imagepath[i]),
               ],
               options: CarouselOptions(
                 autoPlay: true,
-                height: 180,
+                height: screenHeight * 0.25,
                 enlargeCenterPage: true,
                 autoPlayAnimationDuration: const Duration(microseconds: 120),
                 autoPlayCurve: Curves.easeIn,
@@ -45,7 +66,7 @@ class _homeState extends State<home> {
               child: Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: primarycolor,
+                  color: primaryColor,
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
                     BoxShadow(
@@ -100,13 +121,14 @@ class SliderImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Image(
           width: double.infinity,
-          height: 280,
+          height: screenHeight * 0.6,
           fit: BoxFit.cover,
           image: AssetImage(
             imagepath,

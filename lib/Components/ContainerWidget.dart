@@ -18,6 +18,9 @@ class ContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight= MediaQuery.of(context).size.height;
+    double screenWidth= MediaQuery.of(context).size.width;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: InkWell(
@@ -44,13 +47,13 @@ class ContainerWidget extends StatelessWidget {
                     decoration:  BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
 
-                      gradient: kgradient,
+                      gradient: kGradient,
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image(
                         fit: BoxFit.cover,
-                        height: 150,
+                        height: screenHeight * 0.17,
                         width: double.infinity,
                         image: AssetImage(
                           _image_path,
@@ -58,18 +61,18 @@ class ContainerWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 8,
                     right: 8,
                     child: Icon(
                       Icons.favorite_outline,
-                      color: primarycolor,
+                      color: Colors.white,
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 15,
+               SizedBox(
+                height: screenHeight * 0.01,
               ),
               Text(
                 _productname,
@@ -82,7 +85,7 @@ class ContainerWidget extends StatelessWidget {
                   child: ElevatedButtonWidget(
                     onpressed: () {},
                     buttonText: "Cart",
-                    backgroundcolor: primarycolor,
+                    backgroundcolor: primaryColor,
                   ),
                 ),
               ),

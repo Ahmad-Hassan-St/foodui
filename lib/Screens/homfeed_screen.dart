@@ -37,24 +37,24 @@ class _homefeed_screenState extends State<homefeed_screen> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              color: _selectedindex == 0 ?  primarycolor : Colors.grey,
+              color: _selectedindex == 0 ?  primaryColor : Colors.grey,
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.book_online,color: _selectedindex == 1?  primarycolor : Colors.grey,),
+            icon: Icon(Icons.book_online,color: _selectedindex == 1?  primaryColor : Colors.grey,),
             label: 'Booking',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings,color: _selectedindex == 2 ?  primarycolor : Colors.grey,),
+            icon: Icon(Icons.settings,color: _selectedindex == 2 ?  primaryColor : Colors.grey,),
             label: 'Settings',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today,color: _selectedindex == 3 ?  primarycolor : Colors.grey,),
+            icon: Icon(Icons.calendar_today,color: _selectedindex == 3 ?  primaryColor : Colors.grey,),
             label: 'Calendar',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: _selectedindex == 4 ?  primarycolor : Colors.grey,),
+            icon: Icon(Icons.person, color: _selectedindex == 4 ?  primaryColor : Colors.grey,),
             label: 'Person',
           ),
         ],

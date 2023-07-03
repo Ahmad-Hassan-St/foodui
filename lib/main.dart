@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_desing/Screens/SplashScreen.dart';
+import 'package:food_desing/utilis/colors.dart';
 
 void main() {
   runApp(const FoodDesign());
@@ -15,10 +16,15 @@ class FoodDesign extends StatefulWidget {
 class _FoodDesignState extends State<FoodDesign> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: SafeArea(child: SplashScreen()),
+    return MaterialApp(
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          elevation: 0,
+          //backgroundColor: primaryColor,
+        ),
       ),
+      home: SplashScreen(),
     );
   }
 }

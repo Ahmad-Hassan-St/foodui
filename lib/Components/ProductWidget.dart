@@ -19,6 +19,9 @@ class productWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight=MediaQuery.of(context).size.height;
+    double screenWidth=MediaQuery.of(context).size.width;
+
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
@@ -44,8 +47,8 @@ class productWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
 
                 child: Image(
-                   width: 200,
-                  height: 200,
+                   width: screenWidth * 0.2,
+                  height: screenHeight *0.25,
                    fit: BoxFit.cover,
                   image: AssetImage(
                     imagepath,
@@ -65,6 +68,8 @@ class productWidget extends StatelessWidget {
                       decoration: TextDecoration.none,
                       color: Colors.black,
                       fontFamily: "Roboto",
+                      fontWeight: FontWeight.bold,
+
                     ),
                   ),
                 ),
@@ -86,14 +91,14 @@ class productWidget extends StatelessWidget {
                   children: [
                      Icon(
                       Icons.price_change_outlined,
-                      color: primarycolor,
+                      color: primaryColor,
                     ),
                     Text(
                       price,
                       style:  TextStyle(
                         fontSize: 14,
                         decoration: TextDecoration.none,
-                        color: primarycolor,
+                        color: primaryColor,
                         fontFamily: "Roboto",
                       ),
                     ),

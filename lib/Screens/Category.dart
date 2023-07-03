@@ -16,8 +16,10 @@ class _CategoryState extends State<Category> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth=MediaQuery.of(context).size.width;
+
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(screenWidth *0.03),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: GridView.builder(
@@ -52,7 +54,7 @@ class _CategoryState extends State<Category> {
     );
   }
 
-  AppBar buildAppBar() {
+  AppBar buildAppBar( double screenWidth) {
     return AppBar(
       elevation: 0,
       foregroundColor: Colors.black,
@@ -62,10 +64,10 @@ class _CategoryState extends State<Category> {
         style: TextStyle(
             fontSize: 22, fontWeight: FontWeight.bold, fontFamily: 'Roboto'),
       ),
-      actions: const [
-        Icon(Icons.add_alert),
-        SizedBox(width: 10),
-        Padding(
+      actions:  [
+        const Icon(Icons.add_alert),
+        SizedBox(width: screenWidth),
+        const Padding(
           padding: EdgeInsets.only(right: 20),
           child: Icon(Icons.favorite_outline),
         ),

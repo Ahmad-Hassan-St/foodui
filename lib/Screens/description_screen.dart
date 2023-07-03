@@ -17,6 +17,8 @@ class description_screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight= MediaQuery.of(context).size.height;
+    double screenWidth= MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -28,7 +30,7 @@ class description_screen extends StatelessWidget {
                   decoration:  BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
 
-                    gradient: kgradient,
+                    gradient: kGradient,
                     boxShadow: const [
                       BoxShadow(
                         color: Colors.grey,
@@ -43,7 +45,7 @@ class description_screen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: Image(
                       width: double.infinity,
-                      height: 300,
+                      height: screenHeight * 0.35,
                       fit: BoxFit.cover,
                       image: AssetImage(
                         imagePath,
@@ -69,7 +71,7 @@ class description_screen extends StatelessWidget {
                 height: double.infinity,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: primarycolor,
+                  color: primaryColor,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(50),
                     topRight: Radius.circular(50),

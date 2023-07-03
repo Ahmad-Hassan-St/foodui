@@ -14,7 +14,7 @@ class ElevatedButtonWidget extends StatefulWidget {
   });
 
   Color? foregroundcolor = Colors.white;
-  Color? backgroundcolor = primarycolor;
+  Color? backgroundcolor = primaryColor;
   final String buttonText;
   final VoidCallback onpressed;
   double horizantalpadding = 40;
